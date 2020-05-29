@@ -8,17 +8,6 @@ public class BaseCar {
  int releaseYear;
  double price;
  
- public double getPrice() {
-	return price;
-}
-
-
-public void setPrice(double price) {
-	this.price = price;
-}
-
-
-List<String> parts;
 public BaseCar( String model, int releaseYear,double price) {
 	super();
 	
@@ -27,7 +16,14 @@ public BaseCar( String model, int releaseYear,double price) {
 	this.price = price;
 	
 }
+public double getPrice() {
+	return price;
+}
 
+
+public void setPrice(double price) {
+	this.price = price;
+}
 
 public String getModel() {
 	return model;
@@ -46,7 +42,7 @@ public void setReleaseYear(int releaseYear) {
 
 @Override
 public String toString() {
-	return "BaseCar [model=" + model + ", releaseYear=" + releaseYear + ", price=" + price + ", parts=" + parts + "]";
+	return "BaseCar [model=" + model + ", releaseYear=" + releaseYear + ", price=" + price + ",]";
 }
 
 
