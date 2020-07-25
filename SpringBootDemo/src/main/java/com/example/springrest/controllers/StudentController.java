@@ -42,9 +42,9 @@ public class StudentController {
 
 @GetMapping("/student/{id}")
 	
-	public ResponseEntity<Optional<Student>> getStudentbyId(@PathVariable long id){
+	public ResponseEntity<Student> getStudentbyId(@PathVariable long id){
 	
-	Optional<Student> student = studentService.getStudentbyId(id);
+	Student student = studentService.getStudentbyId(id);
 	return new ResponseEntity<>(student,HttpStatus.OK);
 		
 }

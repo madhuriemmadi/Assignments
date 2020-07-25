@@ -32,12 +32,15 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 	}
 	
 	 @ExceptionHandler({ StudentNotFound.class })
-	    protected ResponseEntity<Object> handleNotFound(
-	      Exception ex, WebRequest request) {
-	        return handleExceptionInternal(ex, "Student not found", 
-	          new HttpHeaders(), HttpStatus.NOT_FOUND, request);
-
+	    protected ResponseEntity<Object> StudentNotFound(
+	      StudentNotFound ex, WebRequest request) {
+	        return new ResponseEntity<>("Student not found", HttpStatus.NOT_FOUND);
 }
+	 @ExceptionHandler({ DepartmentNotFound.class })
+	    protected ResponseEntity<String> DepartmentNotFound(
+	      DepartmentNotFound ex, WebRequest request) {
+	        return new ResponseEntity<>("Department not found", HttpStatus.NOT_FOUND);
+}	 
 	 
 	 private ResponseEntity<String> error(HttpStatus status, Exception e) {
 	        return ResponseEntity.status(status).body(e.getMessage());

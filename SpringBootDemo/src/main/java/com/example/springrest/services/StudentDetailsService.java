@@ -9,7 +9,7 @@ public interface StudentDetailsService {
 	
 	public void addStudent(Student student);
 	public void deleteStudent( long id);
-	public Optional<Student> getStudentbyId(long id);
+	public Student getStudentbyId(long id);
 	public Iterable<Student> getAllStudents();
 	public void updateStudent(Student student,long id);
 }
